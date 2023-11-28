@@ -19,7 +19,10 @@ var fs = require("fs");
 
 const IBMCloudEnv = require('ibm-cloud-env');
 IBMCloudEnv.init('/server/config/mappings.json');
-const cloudantUrl = IBMCloudEnv.getString('cloudant_url');
+// VB - 2023.11.28 - no more VCAP in code engine, hnece use process.env variables rather than IBMCloudEnv ones
+
+// const cloudantUrl = IBMCloudEnv.getString('cloudant_url');
+const cloudantUrl = process.env.CLOUDANT_URL;
 
 const REGEX_LEADING_ALPHA = /^[^a-zA-Z]*/;
 const REGEX_ALPHA_NUM = /[^a-zA-Z0-9]/g;
@@ -29,7 +32,7 @@ function _sanitizeAppName(name) {
     return name.toLowerCase().replace(REGEX_LEADING_ALPHA, '').replace(REGEX_ALPHA_NUM, '');
 }
 
-var dbName = _sanitizeAppName(process.env.NODE_RED_STORAGE_DB_NAME || IBMCloudEnv.getString('application_name') || "nodered");
+var dbName = _sanitizeAppName(process.env.NODE_RED_STORAGE_DB_NAME || "nodered");
 
 var userDir = path.join(__dirname,".node-red");
 // Ensure userDir exists - something that is normally taken care of by
