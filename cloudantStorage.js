@@ -15,7 +15,7 @@
  **/
 
 // import dependencies
-const { NoAuthAuthenticator } = require('ibm-cloud-sdk-core');
+// VB 2023.11.29 - const { NoAuthAuthenticator } = require('ibm-cloud-sdk-core');
 const { CloudantV1 } = require("@ibm-cloud/cloudant");
 
 var fs = require('fs');
@@ -89,7 +89,7 @@ var cloudantStorage = {
         url = settings.url;
 
         client = CloudantV1.newInstance({
-            authenticator: new NoAuthAuthenticator({}),
+// VB 2023.11.29 -             authenticator: new NoAuthAuthenticator({}),
         });
         
         client.setServiceUrl(url);
