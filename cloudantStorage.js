@@ -89,7 +89,7 @@ var cloudantStorage = {
         url = settings.url;
 
         client = CloudantV1.newInstance({
-// VB 2023.11.29 -             authenticator: new NoAuthAuthenticator({}),
+// VB 2023.11.29 -  Authentification thru env variables prefixed by CLOUDANT_           authenticator: new NoAuthAuthenticator({}),
         });
         
         client.setServiceUrl(url);
