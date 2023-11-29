@@ -17,8 +17,8 @@
 var path = require("path");
 var fs = require("fs");
 
-//const IBMCloudEnv = require('ibm-cloud-env');
-//IBMCloudEnv.init('/server/config/mappings.json');
+const IBMCloudEnv = require('ibm-cloud-env');
+IBMCloudEnv.init('/server/config/mappings.json');
 // VB - 2023.11.28 - no more VCAP in code engine, hnece use process.env variables rather than IBMCloudEnv ones
 
 // const cloudantUrl = IBMCloudEnv.getString('cloudant_url');
