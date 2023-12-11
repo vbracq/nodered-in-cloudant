@@ -8,7 +8,8 @@
         "express": "4.x",
         "http-shutdown": "1.2.2",
         "ibm-cloud-env": "^0",
-        "node-red": "^3.0.2"
+        "node-red": "^3.0.2",
+        "jsonata": "^2.0.3"
     },
     "scripts": {
         "start": "node --max-old-space-size=160 index.js --settings ./bluemix-settings.js -v"
